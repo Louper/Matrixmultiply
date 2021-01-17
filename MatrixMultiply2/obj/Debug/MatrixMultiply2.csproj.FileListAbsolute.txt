@@ -68,3 +68,6 @@ D:\Inalambria\Repo propios\MatrixMultiply\MatrixMultiply2\obj\Debug\MatrixMultip
 D:\Inalambria\Repo propios\MatrixMultiply\MatrixMultiply2\obj\Debug\MatrixMultiply2.csproj.CopyComplete
 D:\Inalambria\Repo propios\MatrixMultiply\MatrixMultiply2\obj\Debug\MatrixMultiply2.dll
 D:\Inalambria\Repo propios\MatrixMultiply\MatrixMultiply2\obj\Debug\MatrixMultiply2.pdb
+D:\Inalambria\Repo propios\MatrixMultiply\MatrixMultiply2\bin\System.Web.Cors.dll
+D:\Inalambria\Repo propios\MatrixMultiply\MatrixMultiply2\bin\System.Web.Http.Cors.dll
+D:\Inalambria\Repo propios\MatrixMultiply\MatrixMultiply2\bin\System.Web.Http.Cors.xml

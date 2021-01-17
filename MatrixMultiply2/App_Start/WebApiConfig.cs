@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatrixMultiply2.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -9,9 +10,11 @@ namespace MatrixMultiply2
     {
         public static void Register(HttpConfiguration config)
         {
-            // Configuración y servicios de API web
+            
 
-            // Rutas de API web
+            // API web routing
+            config.EnableCors(new AccessPolicyCors());
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

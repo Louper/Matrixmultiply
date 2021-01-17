@@ -1,0 +1,84 @@
+<div class="container">
+  <form class="row mt-3" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="col-12">
+      <div class="row align-items-center">
+        <div class="col-2">Matrix A</div>
+        <div class="col-5">
+          <input type="number" class="form-control" placeholder="x" formControlName="ax">
+        </div>
+        <div class="col-5">
+          <input type="number" class="form-control" placeholder="y" formControlName="ay">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="row align-items-center">
+        <div class="col-2">Matrix B</div>
+        <div class="col-5">
+          <input type="number" class="form-control col-5" placeholder="x" formControlName="bx">
+        </div>
+        <div class="col-5">
+          <input type="number" class="form-control col-5" placeholder="y" formControlName="by">
+        </div>
+      </div>
+    </div>
+
+    <div class="col mt-3 button-container">
+      <button 
+        type="submit" 
+        class="btn btn-primary" 
+        [disabled]="formGroup.invalid">Generar Matrix</button>
+      
+      <button 
+        type="button" 
+        class="btn btn-primary "
+        (click)="reset()">Reiniciar</button>
+    </div>
+  </form>
+
+  <div class="row mt-5" *ngIf="matrizes">
+    <div class="col" [formGroup]="fpMatrixA">
+      <h4>Matrix A</h4>
+      <div class="matrix" *ngFor="let item of matrizes.matrixA.x; let i = index">
+        <input 
+          type="number" 
+          class="form-control col mb-2" 
+          [formControlName]="'a'+i+j"
+          *ngFor="let item of matrizes.matrixA.y; let j = index">
+      </div>
+    </div>
+    <div class="col" [formGroup]="fpMatrixB">
+      <h4>Matrix B</h4>
+      <div class="matrix" *ngFor="let item of matrizes.matrixB.x; let i = index">
+        <input 
+          type="number" 
+          class="form-control col mb-2" 
+          [formControlName]="'b'+i+j"
+          *ngFor="let item of matrizes.matrixB.y; let j = index">
+      </div>
+    </div>
+    <div class="col-12">
+      <button 
+      type="button" 
+      class="btn btn-primary"
+      [disabled]="fpMatrixA.invalid || fpMatrixB.invalid"
+      (click)="sumar()"
+      >Generar Sumar</button>
+    </div>
+  </div>
+
+  <div class="row mt-5" *ngIf="matrixResult">
+    <div class="col" >
+      <h4>Resultado:</h4>
+      <div class="matrix" *ngFor="let item of matrixResult; let i = index">
+        <span 
+          type="number" 
+          class="form-control col mb-2" 
+          *ngFor="let item of matrixResult[0]; let j = index">
+          {{matrixResult[i][j]}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
